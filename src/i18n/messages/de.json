@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "gallery": "Galerie",
+    "studio": "Studio",
+    "artists": "Nail Artists",
+    "loyalty": "Mitgliedschaft",
+    "journal": "Journal",
+    "contact": "Kontakt",
+    "book": "Termin buchen",
+    "gift": "Geschenkkarte"
+  },
+  "hero": {
+    "tagline": "Präzision. Eleganz. Pflege.",
+    "subtitle": "Zürichs feinstes Nagelstudio.",
+    "cta": "Termin reservieren",
+    "scroll": "Entdecken"
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Drei Erfahrungsstufen. Eine Qualität.",
+    "signature": {
+      "name": "Signature",
+      "tagline": "Luxury im Alltag.",
+      "description": "Der Nailuxe-Standard in seiner reinsten Form. Für die Frau, die keine Kompromisse kennt.",
+      "price": "ab CHF 120",
+      "duration": "60–75 Min.",
+      "cta": "Jetzt buchen"
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Erweiterte Kunstfertigkeit.",
+      "description": "Fortgeschrittene Techniken, exklusive Veredelungen und eine verlängerte Pflegeroutine.",
+      "price": "ab CHF 180",
+      "duration": "75–90 Min.",
+      "cta": "Jetzt buchen"
+    },
+    "atelier": {
+      "name": "Atelier",
+      "tagline": "Maßgefertigte Kreation.",
+      "description": "Eine persönliche Konsultation, ein einzigartiges Design, ein unvergessliches Erlebnis.",
+      "price": "ab CHF 260",
+      "duration": "90–120 Min.",
+      "cta": "Jetzt buchen"
+    },
+    "viewAll": "Alle Leistungen ansehen"
+  },
+  "philosophy": {
+    "title": "Nailuxe ist kein Nagelstudio.",
+    "subtitle": "Es ist ein Atelier.",
+    "body": "Jede Kundin verdient mehr als einen Termin. Sie verdient ein Ritual — sorgfältig vorbereitet, präzise ausgeführt und so gestaltet, dass sie sich von der ersten Minute an verstanden fühlt. Das ist der Nailuxe-Standard.",
+    "cta": "Unser Studio entdecken"
+  },
+  "testimonials": {
+    "title": "Was unsere Kundinnen sagen"
+  },
+  "gallery": {
+    "title": "Kunstfertigkeit, die für sich spricht",
+    "subtitle": "Jedes Design ist ein Unikat.",
+    "cta": "Galerie ansehen"
+  },
+  "studio": {
+    "title": "Das Studio",
+    "tagline": "Entworfen für Ihr Wohlbefinden.",
+    "cta": "Studio entdecken"
+  },
+  "loyalty": {
+    "title": "Mitgliedschaft",
+    "subtitle": "Drei Stufen. Unbegrenzte Wertschätzung.",
+    "blanc": {
+      "name": "Blanc",
+      "tagline": "Ihr Einstieg in die Nailuxe-Welt.",
+      "benefits": ["Willkommensgeschenk", "Persönliches Profil", "Geburtstagsprivileg"]
+    },
+    "or": {
+      "name": "Or",
+      "tagline": "Für unsere treuen Kundinnen.",
+      "benefits": ["Prioritätsbuchung", "10% Rabatt auf Produkte", "Saisonale Exklusiva"]
+    },
+    "platine": {
+      "name": "Platine",
+      "tagline": "Das höchste Nailuxe-Erlebnis.",
+      "benefits": ["Garantierter Wunsch-Artist", "Private Buchungen", "VIP-Events"]
+    },
+    "cta": "Mitglied werden"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "address": "Adresse",
+    "hours": "Öffnungszeiten",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank. Wir melden uns innerhalb von 24 Stunden.",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  },
+  "booking": {
+    "title": "Termin buchen",
+    "subtitle": "Wählen Sie Ihre Leistung, Ihren Artist und Ihren Wunschtermin.",
+    "selectService": "Leistung wählen",
+    "selectArtist": "Artist wählen",
+    "anyArtist": "Beliebiger Artist",
+    "selectDate": "Datum wählen",
+    "confirm": "Termin bestätigen",
+    "note": "Alle Zeiten sind in Zürich (MEZ/MESZ)."
+  },
+  "gift": {
+    "title": "Geschenkkarte",
+    "subtitle": "Das schönste Geschenk: ein unvergessliches Erlebnis.",
+    "amounts": ["CHF 120", "CHF 180", "CHF 260", "Betrag wählen"],
+    "cta": "Geschenkkarte kaufen",
+    "note": "Geschenkkarten sind 24 Monate gültig und für alle Leistungen einlösbar."
+  },
+  "footer": {
+    "tagline": "Präzision. Eleganz. Pflege.",
+    "address": "Zürich, Schweiz",
+    "legal": {
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "imprint": "Impressum"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "copyright": "© 2026 Nailuxe. Alle Rechte vorbehalten."
+  },
+  "meta": {
+    "home": {
+      "title": "Nailuxe — Zürichs feinstes Nagelstudio",
+      "description": "Luxuriöse Nagelpflege in Zürich. Präzise Handwerkskunst, erstklassige Produkte und ein Erlebnis, das Sie nie vergessen werden."
+    },
+    "services": {
+      "title": "Leistungen — Nailuxe",
+      "description": "Drei Erfahrungsstufen: Signature, Premium und Atelier. Entdecken Sie unsere exklusiven Nagelpflegeleistungen in Zürich."
+    },
+    "booking": {
+      "title": "Termin buchen — Nailuxe",
+      "description": "Reservieren Sie Ihren Nailuxe-Termin in Zürich. Online-Buchung für alle Leistungen und Artists."
+    }
+  }
+}

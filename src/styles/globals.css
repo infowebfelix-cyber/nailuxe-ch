@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom properties ─────────────────────────────────────── */
+:root {
+  --obsidian: #1A1A1A;
+  --ivory: #F5F0E8;
+  --gold: #C9A96E;
+  --rose: #C4A09A;
+  --stone: #8C8C8C;
+
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+/* ─── Base reset ─────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  body {
+    @apply bg-ivory text-obsidian font-body;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #C9A96E33;
+    color: #1A1A1A;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F5F0E8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C9A96E;
+    border-radius: 3px;
+  }
+
+  /* Focus */
+  :focus-visible {
+    outline: 2px solid #C9A96E;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-obsidian;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  p {
+    @apply font-body text-obsidian leading-relaxed;
+  }
+
+  a {
+    @apply text-obsidian no-underline;
+    transition: color 0.25s ease;
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ─── Component classes ──────────────────────────────────────── */
+@layer components {
+  /* Container */
+  .container-luxury {
+    @apply mx-auto w-full px-6 md:px-10 lg:px-16;
+    max-width: 88rem;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .section-padding-sm {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  /* Gold divider */
+  .divider-gold {
+    @apply w-12 h-px bg-gold mx-auto my-6;
+  }
+
+  .divider-gold-left {
+    @apply w-12 h-px bg-gold my-6;
+  }
+
+  /* Label (eyebrow text) */
+  .label-luxury {
+    @apply font-body text-xs font-medium tracking-[0.2em] uppercase text-stone;
+  }
+
+  /* Display text */
+  .text-display {
+    @apply font-display font-light;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-sm {
+    @apply font-display font-light;
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 bg-obsidian text-ivory;
+    @apply font-body text-xs font-medium tracking-[0.15em] uppercase;
+    @apply transition-all duration-300 ease-luxury;
+    @apply hover:bg-obsidian-light active:scale-[0.98];
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 bg-gold text-obsidian;
+    @apply font-body text-xs font-medium tracking-[0.15em] uppercase;
+    @apply transition-all duration-300 ease-luxury;
+    @apply hover:bg-gold-dark active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 border border-obsidian text-obsidian bg-transparent;
+    @apply font-body text-xs font-medium tracking-[0.15em] uppercase;
+    @apply transition-all duration-300 ease-luxury;
+    @apply hover:bg-obsidian hover:text-ivory active:scale-[0.98];
+  }
+
+  .btn-outline-ivory {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-4 border border-ivory text-ivory bg-transparent;
+    @apply font-body text-xs font-medium tracking-[0.15em] uppercase;
+    @apply transition-all duration-300 ease-luxury;
+    @apply hover:bg-ivory hover:text-obsidian active:scale-[0.98];
+  }
+
+  /* Gold underline link */
+  .link-underline {
+    @apply relative inline-block font-body text-sm tracking-wide;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-gold;
+    transition: width 0.3s ease;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Card */
+  .card-luxury {
+    @apply bg-ivory-light border border-ivory-dark;
+    @apply transition-shadow duration-300;
+    @apply hover:shadow-lg;
+  }
+
+  /* Image overlay */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-obsidian/60 via-obsidian/10 to-transparent;
+  }
+
+  /* Section label bar */
+  .section-eyebrow {
+    @apply flex items-center gap-4 mb-6;
+  }
+  .section-eyebrow::before {
+    content: '';
+    @apply flex-shrink-0 w-8 h-px bg-gold;
+  }
+
+  /* Form inputs */
+  .input-luxury {
+    @apply w-full px-0 py-3 bg-transparent border-0 border-b border-stone/40;
+    @apply font-body text-sm text-obsidian placeholder:text-stone;
+    @apply focus:outline-none focus:border-gold;
+    @apply transition-colors duration-300;
+  }
+
+  .textarea-luxury {
+    @apply input-luxury resize-none;
+    min-height: 120px;
+  }
+}
+
+/* ─── Utility overrides ──────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-ultrawide {
+    aspect-ratio: 21 / 9;
+  }
+}

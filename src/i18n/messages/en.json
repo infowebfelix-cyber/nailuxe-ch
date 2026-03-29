@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "services": "Services",
+    "gallery": "Gallery",
+    "studio": "Studio",
+    "artists": "Nail Artists",
+    "loyalty": "Membership",
+    "journal": "Journal",
+    "contact": "Contact",
+    "book": "Book a Session",
+    "gift": "Gift Card"
+  },
+  "hero": {
+    "tagline": "Precision. Elegance. Care.",
+    "subtitle": "Zürich's finest nail atelier.",
+    "cta": "Reserve Your Session",
+    "scroll": "Discover"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Three tiers of experience. One standard of quality.",
+    "signature": {
+      "name": "Signature",
+      "tagline": "Everyday luxury.",
+      "description": "The Nailuxe standard in its purest form. For the woman who accepts no compromises.",
+      "price": "from CHF 120",
+      "duration": "60–75 min.",
+      "cta": "Book Now"
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Advanced artistry.",
+      "description": "Advanced techniques, exclusive finishes, and an extended care ritual.",
+      "price": "from CHF 180",
+      "duration": "75–90 min.",
+      "cta": "Book Now"
+    },
+    "atelier": {
+      "name": "Atelier",
+      "tagline": "Bespoke creation.",
+      "description": "A personal consultation, a unique design, an unforgettable experience.",
+      "price": "from CHF 260",
+      "duration": "90–120 min.",
+      "cta": "Book Now"
+    },
+    "viewAll": "View all services"
+  },
+  "philosophy": {
+    "title": "Nailuxe is not a nail salon.",
+    "subtitle": "It is an atelier.",
+    "body": "Every client deserves more than an appointment. She deserves a ritual — carefully prepared, precisely executed, and designed so that she feels understood from the very first minute. That is the Nailuxe standard.",
+    "cta": "Discover our studio"
+  },
+  "testimonials": {
+    "title": "What our clients say"
+  },
+  "gallery": {
+    "title": "Artistry that speaks for itself",
+    "subtitle": "Every design is one of a kind.",
+    "cta": "View gallery"
+  },
+  "studio": {
+    "title": "The Studio",
+    "tagline": "Designed for your wellbeing.",
+    "cta": "Discover the studio"
+  },
+  "loyalty": {
+    "title": "Membership",
+    "subtitle": "Three tiers. Unlimited appreciation.",
+    "blanc": {
+      "name": "Blanc",
+      "tagline": "Your entry into the Nailuxe world.",
+      "benefits": ["Welcome gift", "Personal preference profile", "Birthday privilege"]
+    },
+    "or": {
+      "name": "Or",
+      "tagline": "For our loyal clients.",
+      "benefits": ["Priority booking window", "10% retail discount", "Seasonal exclusives"]
+    },
+    "platine": {
+      "name": "Platine",
+      "tagline": "The ultimate Nailuxe experience.",
+      "benefits": ["Guaranteed artist of choice", "Private booking access", "VIP events"]
+    },
+    "cta": "Become a member"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "hours": "Opening Hours",
+    "phone": "Phone",
+    "email": "Email",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Your message",
+      "submit": "Send message",
+      "success": "Thank you. We will respond within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "booking": {
+    "title": "Book a Session",
+    "subtitle": "Choose your service, your artist, and your preferred time.",
+    "selectService": "Select service",
+    "selectArtist": "Select artist",
+    "anyArtist": "Any artist",
+    "selectDate": "Select date",
+    "confirm": "Confirm booking",
+    "note": "All times are in Zürich time (CET/CEST)."
+  },
+  "gift": {
+    "title": "Gift Card",
+    "subtitle": "The finest gift: an unforgettable experience.",
+    "amounts": ["CHF 120", "CHF 180", "CHF 260", "Choose amount"],
+    "cta": "Purchase gift card",
+    "note": "Gift cards are valid for 24 months and redeemable for all services."
+  },
+  "footer": {
+    "tagline": "Precision. Elegance. Care.",
+    "address": "Zürich, Switzerland",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms",
+      "imprint": "Imprint"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "copyright": "© 2026 Nailuxe. All rights reserved."
+  },
+  "meta": {
+    "home": {
+      "title": "Nailuxe — Zürich's Finest Nail Atelier",
+      "description": "Luxury nail care in Zürich. Precise artistry, premium products, and an experience you will never forget."
+    },
+    "services": {
+      "title": "Services — Nailuxe",
+      "description": "Three tiers of experience: Signature, Premium, and Atelier. Discover our exclusive nail care services in Zürich."
+    },
+    "booking": {
+      "title": "Book a Session — Nailuxe",
+      "description": "Reserve your Nailuxe session in Zürich. Online booking for all services and artists."
+    }
+  }
+}

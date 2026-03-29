@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Users/abdulsatarsaedy/**)",
+      "Read(//opt/**)",
+      "Bash(/opt/bin/node --version)",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\")",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

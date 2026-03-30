@@ -73,7 +73,7 @@ export default async function ServicesPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance"
+            className="font-sans font-light text-ivory text-balance"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
           >
             {t('subtitle')}
@@ -92,21 +92,21 @@ export default async function ServicesPage({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
                 {/* Info */}
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <span className="font-display text-5xl font-light text-ivory-dark select-none">
+                  <span className="font-sans text-5xl font-light text-ivory-dark select-none">
                     {tier.number}
                   </span>
-                  <h2 className="font-heading text-3xl md:text-4xl text-obsidian mt-4 mb-3">
+                  <h2 className="font-sans text-3xl md:text-4xl text-obsidian mt-4 mb-3">
                     {t(`${tier.id}.name`)}
                   </h2>
-                  <p className="font-display italic text-stone text-xl mb-6">
+                  <p className="font-sans italic text-stone text-xl mb-6">
                     {t(`${tier.id}.tagline`)}
                   </p>
                   <div className="w-10 h-px mb-6" style={{ backgroundColor: tier.color }} />
-                  <p className="font-body text-stone/80 leading-relaxed mb-8">
+                  <p className="font-sans text-stone/80 leading-relaxed mb-8">
                     {t(`${tier.id}.description`)}
                   </p>
                   <div className="flex items-baseline gap-4 mb-10">
-                    <span className="font-heading text-2xl text-obsidian">
+                    <span className="font-sans text-2xl text-obsidian">
                       {t(`${tier.id}.price`)}
                     </span>
                     <span className="label-luxury text-stone/50">
@@ -128,7 +128,7 @@ export default async function ServicesPage({
                           className="flex-shrink-0 w-4 h-px mt-3"
                           style={{ backgroundColor: tier.color }}
                         />
-                        <span className="font-body text-sm text-obsidian/80 leading-relaxed">
+                        <span className="font-sans text-sm text-obsidian/80 leading-relaxed">
                           {item.de}
                         </span>
                       </li>

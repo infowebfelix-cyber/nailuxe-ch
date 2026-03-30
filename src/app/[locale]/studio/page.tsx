@@ -46,12 +46,12 @@ export default async function StudioPage({ params: { locale } }: { params: { loc
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance mb-6"
+            className="font-sans font-light text-ivory text-balance mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             Das Studio
           </h1>
-          <p className="font-display italic text-ivory/50 text-xl max-w-xl mx-auto">
+          <p className="font-sans italic text-ivory/50 text-xl max-w-xl mx-auto">
             Entworfen für Ihr Wohlbefinden. Gebaut auf Schweizer Präzision.
           </p>
         </div>
@@ -82,10 +82,10 @@ export default async function StudioPage({ params: { locale } }: { params: { loc
                   <p className="label-luxury text-gold/70">{value.label}</p>
                 </div>
                 <div className="md:col-span-2">
-                  <h2 className="font-heading text-2xl md:text-3xl text-obsidian mb-5">
+                  <h2 className="font-sans text-2xl md:text-3xl text-obsidian mb-5">
                     {value.title}
                   </h2>
-                  <p className="font-body text-stone/80 leading-relaxed">
+                  <p className="font-sans text-stone/80 leading-relaxed">
                     {value.body}
                   </p>
                 </div>
@@ -102,11 +102,11 @@ export default async function StudioPage({ params: { locale } }: { params: { loc
             <div>
               <p className="label-luxury text-stone/50 mb-6">Adresse</p>
               <address className="not-italic">
-                <p className="font-heading text-xl text-obsidian">{STUDIO.name}</p>
-                <p className="font-body text-stone mt-2">{STUDIO.address.street}</p>
-                <p className="font-body text-stone">{STUDIO.address.zip} {STUDIO.address.city}</p>
-                <p className="font-body text-stone">{STUDIO.address.country}</p>
-                <a href={`tel:${STUDIO.phone}`} className="font-body text-stone hover:text-obsidian transition-colors mt-4 block">
+                <p className="font-sans text-xl text-obsidian">{STUDIO.name}</p>
+                <p className="font-sans text-stone mt-2">{STUDIO.address.street}</p>
+                <p className="font-sans text-stone">{STUDIO.address.zip} {STUDIO.address.city}</p>
+                <p className="font-sans text-stone">{STUDIO.address.country}</p>
+                <a href={`tel:${STUDIO.phone}`} className="font-sans text-stone hover:text-obsidian transition-colors mt-4 block">
                   {STUDIO.phone}
                 </a>
               </address>
@@ -116,8 +116,8 @@ export default async function StudioPage({ params: { locale } }: { params: { loc
               <div className="flex flex-col gap-3">
                 {Object.entries(STUDIO.hours).map(([day, hours]) => (
                   <div key={day} className="flex items-center justify-between gap-6 pb-3 border-b border-ivory-dark last:border-0">
-                    <span className="font-body text-sm font-medium text-obsidian">{day}</span>
-                    <span className="font-body text-sm text-stone">{hours}</span>
+                    <span className="font-sans text-sm font-medium text-obsidian">{day}</span>
+                    <span className="font-sans text-sm text-stone">{hours}</span>
                   </div>
                 ))}
               </div>

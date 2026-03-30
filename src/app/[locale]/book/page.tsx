@@ -25,12 +25,12 @@ export default async function BookPage({
         <div className="container-luxury pb-16 md:pb-20">
           <p className="label-luxury text-gold/60 mb-5">Online</p>
           <h1
-            className="font-heading font-light text-ivory text-balance mb-4"
+            className="font-sans font-light text-ivory text-balance mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.06, letterSpacing: '-0.02em' }}
           >
             Termin buchen
           </h1>
-          <p className="font-body text-ivory/40 text-base max-w-sm">
+          <p className="font-sans text-ivory/40 text-base max-w-sm">
             Wählen Sie Ihre Leistung und senden Sie uns Ihre Anfrage via WhatsApp.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default async function BookPage({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
             <div>
               <p className="label-luxury text-gold/50 mb-3">Adresse</p>
-              <p className="font-body text-sm text-ivory/60 leading-relaxed">
+              <p className="font-sans text-sm text-ivory/60 leading-relaxed">
                 {STUDIO.address.street}<br />
                 {STUDIO.address.zip} {STUDIO.address.city}
               </p>
@@ -60,7 +60,7 @@ export default async function BookPage({
               <p className="label-luxury text-gold/50 mb-3">Öffnungszeiten</p>
               <div className="space-y-1">
                 {Object.entries(STUDIO.hours).map(([day, hours]) => (
-                  <div key={day} className="flex justify-between gap-6 text-sm font-body">
+                  <div key={day} className="flex justify-between gap-6 text-sm font-sans">
                     <span className="text-ivory/40">{day}</span>
                     <span className="text-ivory/60">{hours}</span>
                   </div>
@@ -72,13 +72,13 @@ export default async function BookPage({
               <div className="space-y-2">
                 <a
                   href={`tel:${STUDIO.phone}`}
-                  className="block font-body text-sm text-ivory/60 hover:text-ivory transition-colors"
+                  className="block font-sans text-sm text-ivory/60 hover:text-ivory transition-colors"
                 >
                   {STUDIO.phone}
                 </a>
                 <a
                   href={`mailto:${STUDIO.email}`}
-                  className="block font-body text-sm text-ivory/60 hover:text-ivory transition-colors"
+                  className="block font-sans text-sm text-ivory/60 hover:text-ivory transition-colors"
                 >
                   {STUDIO.email}
                 </a>

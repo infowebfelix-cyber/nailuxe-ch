@@ -55,7 +55,7 @@ export default async function LoyaltyPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance"
+            className="font-sans font-light text-ivory text-balance"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             {t('subtitle')}
@@ -88,12 +88,12 @@ export default async function LoyaltyPage({
                     {tier.threshold}
                   </p>
                   <h2
-                    className={`font-heading text-3xl mb-2 ${tier.featured ? 'text-ivory' : 'text-obsidian'}`}
+                    className={`font-sans text-3xl mb-2 ${tier.featured ? 'text-ivory' : 'text-obsidian'}`}
                   >
                     {t(`${tier.id}.name`)}
                   </h2>
                   <p
-                    className={`font-display italic text-lg ${tier.featured ? 'text-ivory/60' : 'text-stone'}`}
+                    className={`font-sans italic text-lg ${tier.featured ? 'text-ivory/60' : 'text-stone'}`}
                   >
                     {t(`${tier.id}.tagline`)}
                   </p>
@@ -111,7 +111,7 @@ export default async function LoyaltyPage({
                         style={{ color: tier.accent }}
                       />
                       <span
-                        className={`font-body text-sm leading-relaxed ${
+                        className={`font-sans text-sm leading-relaxed ${
                           tier.featured ? 'text-ivory/70' : 'text-stone/80'
                         }`}
                       >
@@ -133,7 +133,7 @@ export default async function LoyaltyPage({
           </div>
 
           {/* Note */}
-          <p className="text-center font-body text-sm text-stone/50 mt-12 max-w-xl mx-auto">
+          <p className="text-center font-sans text-sm text-stone/50 mt-12 max-w-xl mx-auto">
             Die Mitgliedschaft wird automatisch auf Basis Ihrer Besuchshistorie vergeben.
             Keine Anmeldung erforderlich — Nailuxe erkennt Sie.
           </p>

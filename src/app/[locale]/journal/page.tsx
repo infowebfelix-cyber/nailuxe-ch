@@ -57,7 +57,7 @@ export default async function JournalPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory"
+            className="font-sans font-light text-ivory"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             Einblicke
@@ -77,10 +77,10 @@ export default async function JournalPage({
                     <span className="w-1 h-1 rounded-full bg-stone/30" aria-hidden />
                     <span className="label-luxury text-stone/40">{article.readTime}</span>
                   </div>
-                  <h2 className="font-heading text-2xl md:text-3xl text-obsidian group-hover:text-gold transition-colors duration-300 mb-4 text-balance">
+                  <h2 className="font-sans text-2xl md:text-3xl text-obsidian group-hover:text-gold transition-colors duration-300 mb-4 text-balance">
                     {article.title}
                   </h2>
-                  <p className="font-body text-stone/70 leading-relaxed max-w-2xl mb-6">
+                  <p className="font-sans text-stone/70 leading-relaxed max-w-2xl mb-6">
                     {article.excerpt}
                   </p>
                   <div className="flex items-center gap-3 label-luxury text-stone/40">
@@ -91,7 +91,7 @@ export default async function JournalPage({
                         year: 'numeric',
                       })}
                     </time>
-                    <span className="font-body group-hover:translate-x-1 transition-transform duration-300 inline-block">
+                    <span className="font-sans group-hover:translate-x-1 transition-transform duration-300 inline-block">
                       →
                     </span>
                   </div>

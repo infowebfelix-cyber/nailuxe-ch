@@ -60,7 +60,7 @@ export default async function ArtistsPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance"
+            className="font-sans font-light text-ivory text-balance"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             Unsere Nail Artists
@@ -91,19 +91,19 @@ export default async function ArtistsPage({
 
                 {/* Info */}
                 <div className="flex-1 flex flex-col">
-                  <h2 className="font-heading text-2xl text-obsidian mb-1">{artist.name}</h2>
+                  <h2 className="font-sans text-2xl text-obsidian mb-1">{artist.name}</h2>
                   <p className="label-luxury text-gold/70 mb-3">{artist.title}</p>
                   <div className="w-8 h-px bg-gold mb-5" />
                   <p className="label-luxury text-stone/50 mb-1">Spezialgebiet</p>
-                  <p className="font-body text-sm text-obsidian mb-4">{artist.specialty}</p>
+                  <p className="font-sans text-sm text-obsidian mb-4">{artist.specialty}</p>
                   <p className="label-luxury text-stone/50 mb-1">Erfahrung</p>
-                  <p className="font-body text-sm text-obsidian mb-6">{artist.experience}</p>
-                  <p className="font-body text-sm text-stone/70 leading-relaxed mb-8 flex-1">
+                  <p className="font-sans text-sm text-obsidian mb-6">{artist.experience}</p>
+                  <p className="font-sans text-sm text-stone/70 leading-relaxed mb-8 flex-1">
                     {artist.story}
                   </p>
                   <Link
                     href={`${prefix}/book?artist=${artist.id}`}
-                    className="btn-outline self-start"
+                    className="inline-flex items-center gap-2 font-sans text-sm font-medium text-obsidian border border-obsidian/25 px-5 py-2.5 hover:bg-obsidian hover:text-ivory transition-all duration-200"
                   >
                     Mit {artist.name.split(' ')[0]} buchen
                   </Link>

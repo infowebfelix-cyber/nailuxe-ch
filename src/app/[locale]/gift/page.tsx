@@ -29,7 +29,7 @@ export default async function GiftPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance mb-6"
+            className="font-sans font-light text-ivory text-balance mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             {t('subtitle')}
@@ -48,23 +48,23 @@ export default async function GiftPage({
             <div className="absolute top-6 left-6 w-10 h-10 border-t border-l border-gold/40" />
             <div className="absolute bottom-6 right-6 w-10 h-10 border-b border-r border-gold/40" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-              <span className="font-display font-light text-ivory tracking-[0.3em] text-2xl uppercase">
+              <span className="font-sans font-light text-ivory tracking-[0.3em] text-2xl uppercase">
                 Nailuxe
               </span>
               <div className="w-12 h-px bg-gold/50" />
-              <span className="font-display italic text-ivory/50 text-sm">
+              <span className="font-sans italic text-ivory/50 text-sm">
                 Precision. Elegance. Care.
               </span>
             </div>
           </div>
 
           {/* Amount selection */}
-          <h2 className="font-heading text-xl text-obsidian mb-8">Betrag wählen</h2>
+          <h2 className="font-sans text-xl text-obsidian mb-8">Betrag wählen</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {GIFT_AMOUNTS.map((amount) => (
               <button
                 key={amount}
-                className="py-5 border border-ivory-dark hover:border-gold hover:text-gold font-heading text-xl text-obsidian transition-all duration-300 text-center"
+                className="py-5 border border-ivory-dark hover:border-gold hover:text-gold font-sans text-xl text-obsidian transition-all duration-300 text-center"
               >
                 {formatPrice(amount)}
               </button>
@@ -81,7 +81,7 @@ export default async function GiftPage({
             {t('cta')}
           </button>
 
-          <p className="text-center font-body text-sm text-stone/50 mt-6">
+          <p className="text-center font-sans text-sm text-stone/50 mt-6">
             {t('note')}
           </p>
         </div>

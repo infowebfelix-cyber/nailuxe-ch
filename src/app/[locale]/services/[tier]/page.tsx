@@ -58,16 +58,16 @@ export default async function TierPage({
               {t(`${currentTier}.duration`)}
             </p>
             <h1
-              className="font-display font-light text-ivory text-balance mb-4"
+              className="font-sans font-light text-ivory text-balance mb-4"
               style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1.06 }}
             >
               {t(`${currentTier}.name`)}
             </h1>
-            <p className="font-display italic text-ivory/50 text-xl mb-8">
+            <p className="font-sans italic text-ivory/50 text-xl mb-8">
               {t(`${currentTier}.tagline`)}
             </p>
             <div className="flex items-baseline gap-6">
-              <span className="font-heading text-2xl" style={{ color: tierAccentColor }}>
+              <span className="font-sans text-2xl" style={{ color: tierAccentColor }}>
                 {t(`${currentTier}.price`)}
               </span>
             </div>
@@ -78,7 +78,7 @@ export default async function TierPage({
       {/* Detail */}
       <div className="bg-ivory section-padding">
         <div className="container-luxury max-w-2xl">
-          <p className="font-body text-stone/80 text-lg leading-relaxed mb-14">
+          <p className="font-sans text-stone/80 text-lg leading-relaxed mb-14">
             {t(`${currentTier}.description`)}
           </p>
 

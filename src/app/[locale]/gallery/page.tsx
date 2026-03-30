@@ -40,12 +40,12 @@ export default async function GalleryPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory text-balance mb-4"
+            className="font-sans font-light text-ivory text-balance mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1 }}
           >
             {t('title')}
           </h1>
-          <p className="font-display italic text-ivory/50 text-xl">
+          <p className="font-sans italic text-ivory/50 text-xl">
             {t('subtitle')}
           </p>
         </div>
@@ -96,8 +96,8 @@ export default async function GalleryPage({
                 <div className="absolute inset-0 bg-obsidian/0 group-hover:bg-obsidian/50 transition-colors duration-400 flex flex-col justify-end p-4">
                   <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <span className="label-luxury text-gold block mb-1">{item.technique}</span>
-                    <span className="font-display italic text-ivory text-sm">{item.style}</span>
-                    <span className="label-luxury text-ivory/50 block mt-1">by {item.artist}</span>
+                    <span className="font-sans italic text-ivory text-sm">{item.style}</span>
+                    <span className="label-luxury text-ivory/50 block mt-1">von {item.artist}</span>
                   </div>
                 </div>
               </div>

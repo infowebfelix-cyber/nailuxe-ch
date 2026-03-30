@@ -30,7 +30,7 @@ export default async function ContactPage({
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1
-            className="font-display font-light text-ivory"
+            className="font-sans font-light text-ivory"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.08 }}
           >
             Wir freuen uns von Ihnen zu hören.
@@ -44,7 +44,7 @@ export default async function ContactPage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Contact info */}
             <div>
-              <h2 className="font-heading text-2xl text-obsidian mb-10">
+              <h2 className="font-sans text-2xl text-obsidian mb-10">
                 Studio Informationen
               </h2>
 
@@ -53,9 +53,9 @@ export default async function ContactPage({
                   <MapPin size={18} className="text-gold flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="label-luxury text-stone/50 mb-2">{t('address')}</p>
-                    <p className="font-body text-obsidian">{STUDIO.address.street}</p>
-                    <p className="font-body text-obsidian">{STUDIO.address.zip} {STUDIO.address.city}</p>
-                    <p className="font-body text-stone">{STUDIO.address.country}</p>
+                    <p className="font-sans text-obsidian">{STUDIO.address.street}</p>
+                    <p className="font-sans text-obsidian">{STUDIO.address.zip} {STUDIO.address.city}</p>
+                    <p className="font-sans text-stone">{STUDIO.address.country}</p>
                   </div>
                 </div>
 
@@ -63,7 +63,7 @@ export default async function ContactPage({
                   <Phone size={18} className="text-gold flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="label-luxury text-stone/50 mb-2">{t('phone')}</p>
-                    <a href={`tel:${STUDIO.phone}`} className="font-body text-obsidian hover:text-gold transition-colors">
+                    <a href={`tel:${STUDIO.phone}`} className="font-sans text-obsidian hover:text-gold transition-colors">
                       {STUDIO.phone}
                     </a>
                   </div>
@@ -73,7 +73,7 @@ export default async function ContactPage({
                   <Mail size={18} className="text-gold flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="label-luxury text-stone/50 mb-2">{t('email')}</p>
-                    <a href={`mailto:${STUDIO.email}`} className="font-body text-obsidian hover:text-gold transition-colors">
+                    <a href={`mailto:${STUDIO.email}`} className="font-sans text-obsidian hover:text-gold transition-colors">
                       {STUDIO.email}
                     </a>
                   </div>
@@ -86,8 +86,8 @@ export default async function ContactPage({
                     <div className="flex flex-col gap-2">
                       {Object.entries(STUDIO.hours).map(([day, hours]) => (
                         <div key={day} className="flex justify-between gap-8">
-                          <span className="font-body text-sm font-medium text-obsidian">{day}</span>
-                          <span className="font-body text-sm text-stone">{hours}</span>
+                          <span className="font-sans text-sm font-medium text-obsidian">{day}</span>
+                          <span className="font-sans text-sm text-stone">{hours}</span>
                         </div>
                       ))}
                     </div>
@@ -113,7 +113,7 @@ export default async function ContactPage({
 
             {/* Contact form */}
             <div>
-              <h2 className="font-heading text-2xl text-obsidian mb-10">
+              <h2 className="font-sans text-2xl text-obsidian mb-10">
                 Nachricht senden
               </h2>
               <ContactForm locale={locale} />

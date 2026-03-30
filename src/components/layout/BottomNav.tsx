@@ -1,20 +1,36 @@
 'use client'
 
+/**
+ * BottomNav — Gridonic-style floating navigation
+ *
+ * LAYOUT
+ *  Mobile  : pill left | FAB right  (justify-between)
+ *  Desktop : pill + FAB centered side-by-side (justify-center gap-3)
+ *
+ * HOW TO CHANGE LINKS (note for owner):
+ *  Pill nav links  → edit the `navLinks` array below (href values)
+ *  Arch item links → edit the `archItems` array below (href / path values)
+ *    - "book"      → internal page, change `path` (e.g. '/book')
+ *    - "whatsapp"  → change `href` to your WhatsApp number URL
+ *    - "instagram" → change `href` to your Instagram profile URL
+ *    - "email"     → change `href` to your email mailto: link
+ */
+
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
-import { Scissors, Image, Users, Home } from 'lucide-react'
+import { Image, Users, Briefcase } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { STUDIO } from '@/lib/constants'
 
-// ── Arch items (FAB opens these) ─────────────────────────────────
+// ── Arch action items ────────────────────────────────────────────
 const archItems = [
   {
     id: 'book',
     label: 'Termin',
     isInternal: true,
-    path: '/book',
+    path: '/book',            // ← change this path to update booking page
     bg: '#C9A96E',
     color: '#1A1A1A',
     icon: (
@@ -27,7 +43,7 @@ const archItems = [
     id: 'whatsapp',
     label: 'WhatsApp',
     isInternal: false,
-    href: `https://wa.me/${STUDIO.whatsapp}`,
+    href: `https://wa.me/${STUDIO.whatsapp}`, // ← change number in src/lib/constants.ts
     bg: '#25D366',
     color: '#fff',
     icon: (
@@ -40,7 +56,7 @@ const archItems = [
     id: 'instagram',
     label: 'Instagram',
     isInternal: false,
-    href: STUDIO.social.instagram,
+    href: STUDIO.social.instagram, // ← change in src/lib/constants.ts → social.instagram
     bg: '#2C2C2C',
     color: '#F5F0E8',
     icon: (
@@ -53,7 +69,7 @@ const archItems = [
     id: 'email',
     label: 'E-Mail',
     isInternal: false,
-    href: `mailto:${STUDIO.email}`,
+    href: `mailto:${STUDIO.email}`, // ← change email in src/lib/constants.ts
     bg: '#2C2C2C',
     color: '#C9A96E',
     icon: (
@@ -64,53 +80,42 @@ const archItems = [
   },
 ]
 
-// ── Quarter-circle arc: from straight-UP to straight-LEFT ────────
-// CSS coords: y increases downward.
-// angle = -π/2  → (cos=0,  sin=-1) → (x=0,  y=-r)  = STRAIGHT UP
-// angle = -π    → (cos=-1, sin=0)  → (x=-r, y=0)   = STRAIGHT LEFT
-// Interpolating from -π/2 → -π (counterclockwise through upper-left)
-function arcXY(index: number, total: number, r: number) {
-  const start = -Math.PI / 2          // straight up
-  const end   = -Math.PI              // straight left
-  const t     = index / (total - 1)
-  const angle = start + t * (end - start)
-  return {
-    x: Math.round(Math.cos(angle) * r),
-    y: Math.round(Math.sin(angle) * r),
-  }
+// ── Arch positions: quarter-circle from straight-UP to straight-LEFT ──
+// angle goes from -90° (up) to -180° (left) in CSS coords
+function arcPos(i: number, total: number, r: number) {
+  const start = -Math.PI / 2
+  const end   = -Math.PI
+  const a     = start + (i / (total - 1)) * (end - start)
+  return { x: Math.round(Math.cos(a) * r), y: Math.round(Math.sin(a) * r) }
 }
 
-// ── Pill nav links ───────────────────────────────────────────────
+// ── Pill nav items ───────────────────────────────────────────────
 const navLinks = [
-  { key: 'home',     path: '/',         Icon: Home,     label: 'Home'       },
-  { key: 'services', path: '/services', Icon: Scissors, label: 'Leistungen' },
-  { key: 'gallery',  path: '/gallery',  Icon: Image,    label: 'Galerie'    },
-  { key: 'artists',  path: '/artists',  Icon: Users,    label: 'Artists'    },
+  { key: 'home',     path: '/',         label: 'Home',       icon: null },     // renders "N"
+  { key: 'services', path: '/services', label: 'Leistungen', icon: Briefcase },
+  { key: 'gallery',  path: '/gallery',  label: 'Galerie',    icon: Image },
+  { key: 'artists',  path: '/artists',  label: 'Artists',    icon: Users },
 ] as const
 
 // ── Component ────────────────────────────────────────────────────
 export default function BottomNav() {
-  const pathname = usePathname()
-  const locale   = useLocale()
-  const prefix   = `/${locale}`
+  const pathname  = usePathname()
+  const locale    = useLocale()
+  const prefix    = `/${locale}`
   const [open, setOpen] = useState(false)
-  const wrapRef = useRef<HTMLDivElement>(null)
-
-  // Arc radius — tighter on mobile
-  const R = 88
+  const wrapRef   = useRef<HTMLDivElement>(null)
+  const R         = 88  // arc radius in px
 
   useEffect(() => {
     if (!open) return
-    const onDown = (e: MouseEvent | TouchEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setOpen(false)
-      }
+    const close = (e: MouseEvent | TouchEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false)
     }
-    document.addEventListener('mousedown', onDown)
-    document.addEventListener('touchstart', onDown)
+    document.addEventListener('mousedown', close)
+    document.addEventListener('touchstart', close)
     return () => {
-      document.removeEventListener('mousedown', onDown)
-      document.removeEventListener('touchstart', onDown)
+      document.removeEventListener('mousedown', close)
+      document.removeEventListener('touchstart', close)
     }
   }, [open])
 
@@ -118,21 +123,23 @@ export default function BottomNav() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
-      {/* Safe-area padding for notched phones */}
-      <div className="flex items-end justify-between px-4 sm:px-6 pb-5 sm:pb-6" style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}>
+      <div
+        className="flex items-end justify-between sm:justify-center sm:gap-3 px-4 sm:px-6"
+        style={{ paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom, 1.25rem))' }}
+      >
 
-        {/* ── LEFT: icon-only pill ──────────────────────────── */}
+        {/* ── Pill nav ─────────────────────────────────── */}
         <nav
           className={cn(
             'pointer-events-auto flex items-center gap-0.5',
-            'bg-obsidian/45 backdrop-blur-2xl',
-            'border border-white/[0.06]',
+            'bg-obsidian/40 backdrop-blur-2xl',
+            'border border-white/[0.07]',
             'rounded-full p-1',
-            'shadow-[0_2px_20px_rgba(0,0,0,0.45)]'
+            'shadow-[0_2px_20px_rgba(0,0,0,0.4)]'
           )}
           aria-label="Hauptnavigation"
         >
-          {navLinks.map(({ key, path, Icon, label }) => {
+          {navLinks.map(({ key, path, label, icon: Icon }) => {
             const href     = key === 'home' ? prefix : `${prefix}${path}`
             const isActive = key === 'home'
               ? pathname === prefix || pathname === `${prefix}/`
@@ -148,58 +155,50 @@ export default function BottomNav() {
                   'w-10 h-10 rounded-full flex items-center justify-center',
                   'transition-all duration-200',
                   isActive
-                    ? 'bg-white/[0.08] text-gold'
-                    : 'text-ivory/30 hover:text-ivory/70 hover:bg-white/[0.04]'
+                    ? 'bg-white/[0.09] text-gold'
+                    : 'text-ivory/30 hover:text-ivory/75 hover:bg-white/[0.05]'
                 )}
               >
-                <Icon size={14} strokeWidth={isActive ? 2 : 1.5} />
+                {key === 'home' ? (
+                  <span className="font-sans text-[11px] font-medium tracking-[0.18em]">N</span>
+                ) : Icon ? (
+                  <Icon size={14} strokeWidth={isActive ? 2 : 1.5} />
+                ) : null}
               </Link>
             )
           })}
         </nav>
 
-        {/* ── RIGHT: FAB + radial arch ──────────────────────── */}
+        {/* ── FAB + radial arch ────────────────────────── */}
         <div
           ref={wrapRef}
-          className="pointer-events-auto relative"
+          className="pointer-events-auto relative sm:ml-1"
           style={{ width: 56, height: 56 }}
         >
-          {/* Arch items — absolutely positioned relative to FAB */}
+          {/* Arch items — icons ONLY, no labels */}
           {archItems.map((item, i) => {
-            const { x, y } = arcXY(i, archItems.length, R)
-            const openDelay  = i * 55
-            const closeDelay = (archItems.length - 1 - i) * 35
+            const { x, y }  = arcPos(i, archItems.length, R)
+            const oDelay    = i * 55
+            const cDelay    = (archItems.length - 1 - i) * 35
 
-            const circleClass = cn(
-              'absolute w-11 h-11 rounded-full flex items-center justify-center',
-              'shadow-[0_4px_16px_rgba(0,0,0,0.5)]',
-              'transition-transform duration-100 active:scale-90'
-            )
-
-            const pos: React.CSSProperties = {
-              bottom: 0,
-              right:  0,
-              transform: open
-                ? `translate(${x}px, ${y}px) scale(1)`
-                : `translate(0px, 0px) scale(0.3)`,
-              opacity: open ? 1 : 0,
-              transition: `transform 420ms cubic-bezier(0.34, 1.5, 0.64, 1) ${open ? openDelay : closeDelay}ms, opacity 220ms ease ${open ? openDelay : closeDelay}ms`,
-              pointerEvents: open ? 'auto' : 'none',
+            const style: React.CSSProperties = {
+              position:   'absolute',
+              bottom: 0, right: 0,
+              width: 44, height: 44,
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               background: item.bg,
               color: item.color,
+              boxShadow: '0 4px 18px rgba(0,0,0,0.45)',
+              transform: open
+                ? `translate(${x}px, ${y}px) scale(1)`
+                : 'translate(0,0) scale(0.3)',
+              opacity: open ? 1 : 0,
+              transition: `transform 430ms cubic-bezier(0.34,1.5,0.64,1) ${open ? oDelay : cDelay}ms, opacity 220ms ease ${open ? oDelay : cDelay}ms`,
+              pointerEvents: open ? 'auto' : 'none',
             }
-
-            const label = (
-              <span
-                className="absolute right-[calc(100%+6px)] top-1/2 -translate-y-1/2 font-sans text-[9px] font-medium tracking-[0.1em] uppercase whitespace-nowrap bg-obsidian/80 text-ivory/55 backdrop-blur-md px-2 py-0.5 rounded-full pointer-events-none"
-                style={{
-                  opacity: open ? 1 : 0,
-                  transition: `opacity 180ms ease ${open ? openDelay + 100 : 0}ms`,
-                }}
-              >
-                {item.label}
-              </span>
-            )
 
             return item.isInternal ? (
               <Link
@@ -207,10 +206,9 @@ export default function BottomNav() {
                 href={`${prefix}${item.path}`}
                 aria-label={item.label}
                 onClick={() => setOpen(false)}
-                className={circleClass}
-                style={pos}
+                style={style}
+                className="active:scale-90 transition-transform duration-100"
               >
-                {label}
                 {item.icon}
               </Link>
             ) : (
@@ -220,16 +218,15 @@ export default function BottomNav() {
                 target={item.id !== 'email' ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 aria-label={item.label}
-                className={circleClass}
-                style={pos}
+                style={style}
+                className="active:scale-90 transition-transform duration-100"
               >
-                {label}
                 {item.icon}
               </a>
             )
           })}
 
-          {/* FAB button */}
+          {/* FAB */}
           <button
             onClick={() => setOpen(v => !v)}
             aria-label={open ? 'Schließen' : 'Kontakt & Buchung'}
@@ -237,14 +234,13 @@ export default function BottomNav() {
             style={{ position: 'absolute', bottom: 0, right: 0 }}
             className={cn(
               'w-14 h-14 rounded-2xl flex items-center justify-center',
-              'shadow-[0_4px_24px_rgba(0,0,0,0.55)]',
+              'shadow-[0_4px_24px_rgba(0,0,0,0.5)]',
               'transition-all duration-300 ease-[cubic-bezier(0.34,1.5,0.64,1)]',
               open
-                ? 'bg-ivory text-obsidian scale-[0.92]'
-                : 'bg-obsidian/55 backdrop-blur-2xl border border-white/[0.09] text-ivory/60 hover:text-ivory hover:bg-obsidian/75'
+                ? 'bg-ivory/95 text-obsidian scale-[0.92]'
+                : 'bg-obsidian/50 backdrop-blur-2xl border border-white/[0.09] text-ivory/65 hover:text-ivory hover:bg-obsidian/75'
             )}
           >
-            {/* Chat icon → × */}
             <span
               className="absolute inset-0 flex items-center justify-center transition-all duration-300"
               style={{ opacity: open ? 0 : 1, transform: open ? 'scale(0.4) rotate(90deg)' : 'scale(1) rotate(0deg)' }}

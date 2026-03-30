@@ -19,7 +19,7 @@ const artists = [
     specialty: 'Atelier & Bespoke Design',
     experience: '8 Jahre',
     story: 'Sofia ist spezialisiert auf einzigartige Atelier-Designs mit einem ausgeprägten Sinn für Proportion und Farbe. Ihre Arbeit verbindet Schweizer Präzision mit europäischer Eleganz.',
-    signature: 'Minimalist Luxury',
+    signature: 'Minimalistischer Luxus',
   },
   {
     id: 'lena',
@@ -28,7 +28,7 @@ const artists = [
     specialty: 'Premium Gel & Texturen',
     experience: '6 Jahre',
     story: 'Lenas Expertise liegt in fortgeschrittenen Gel-Techniken und innovativen Oberflächenveredelungen. Sie transformiert jeden Wunsch in ein präzise ausgeführtes Kunstwerk.',
-    signature: 'Chrome & Texture',
+    signature: 'Chrome & Textur',
   },
   {
     id: 'maya',
@@ -36,8 +36,8 @@ const artists = [
     title: 'Nail Artist',
     specialty: 'French & Klassik',
     experience: '4 Jahre',
-    story: 'Maya hat ihre Leidenschaft für zeitlose Eleganz zur Profession gemacht. Ihre French-Manikür ist makellos — jedes Mal, für jeden Kunden.',
-    signature: 'Classic Precision',
+    story: 'Maya hat ihre Leidenschaft für zeitlose Eleganz zur Profession gemacht. Ihre French-Manikür ist makellos — jedes Mal, für jede Kundin.',
+    signature: 'Klassische Präzision',
   },
 ]
 
@@ -56,7 +56,7 @@ export default async function ArtistsPage({
         <div className="container-luxury text-center">
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="w-8 h-px bg-gold/40" />
-            <span className="label-luxury text-gold/60">Team</span>
+            <span className="label-luxury text-gold/60">Unser Team</span>
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1

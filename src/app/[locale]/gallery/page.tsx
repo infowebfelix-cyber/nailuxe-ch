@@ -36,7 +36,7 @@ export default async function GalleryPage({
         <div className="container-luxury text-center">
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="w-8 h-px bg-gold/40" />
-            <span className="label-luxury text-gold/60">Portfolio</span>
+            <span className="label-luxury text-gold/60">Galerie</span>
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1

@@ -51,7 +51,7 @@ export default async function TierPage({
             href={`${prefix}/services`}
             className="label-luxury text-gold/50 hover:text-gold transition-colors duration-200 flex items-center gap-2 mb-12"
           >
-            ← Services
+            ← Leistungen
           </Link>
           <div className="max-w-2xl">
             <p className="label-luxury text-gold/60 mb-4">

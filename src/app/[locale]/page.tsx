@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import HeroSection from '@/components/sections/HeroSection'
 import ServicesPreview from '@/components/sections/ServicesPreview'
 import PhilosophySection from '@/components/sections/PhilosophySection'
@@ -17,7 +17,8 @@ export async function generateMetadata({
   return { title: t('title'), description: t('description') }
 }
 
-export default function HomePage() {
+export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale)
   return (
     <>
       <HeroSection />

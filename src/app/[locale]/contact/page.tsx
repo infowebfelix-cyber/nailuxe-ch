@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import ContactForm from '@/components/forms/ContactForm'
 import { STUDIO } from '@/lib/constants'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
@@ -16,6 +16,7 @@ export default async function ContactPage({
 }: {
   params: { locale: string }
 }) {
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'contact' })
 
   return (

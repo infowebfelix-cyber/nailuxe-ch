@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import BookingCTA from '@/components/sections/BookingCTA'
 import { STUDIO } from '@/lib/constants'
 
@@ -33,7 +33,8 @@ const studioValues = [
   },
 ]
 
-export default async function StudioPage() {
+export default async function StudioPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale)
   return (
     <>
       {/* Header */}

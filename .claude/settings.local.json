@@ -11,7 +11,23 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "Bash(gh auth:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(cat /Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/page.tsx)",
+      "Bash(cat /Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/layout.tsx)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//Users/abdulsatarsaedy/NailuXe.ch/**)",
+      "Bash(done)",
+      "Bash(sed -n '23,28p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/gallery/page.tsx\")",
+      "Bash(sed -n '57,63p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/services/page.tsx\")",
+      "Bash(sed -n '43,49p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/artists/page.tsx\")",
+      "Bash(sed -n '13,19p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/book/page.tsx\")",
+      "Bash(sed -n '13,19p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/gift/page.tsx\")",
+      "Bash(sed -n '43,50p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/artists/page.tsx\")",
+      "Bash(sed -n '40,47p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/journal/page.tsx\")",
+      "Bash(sed -n '36,44p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/studio/page.tsx\")",
+      "Bash(git add:*)"
     ]
   }
 }

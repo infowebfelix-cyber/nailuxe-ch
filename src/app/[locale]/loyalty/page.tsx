@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import BookingCTA from '@/components/sections/BookingCTA'
 import { Check } from 'lucide-react'
 
@@ -16,6 +16,7 @@ export default async function LoyaltyPage({
 }: {
   params: { locale: string }
 }) {
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'loyalty' })
   const prefix = `/${locale}`
 

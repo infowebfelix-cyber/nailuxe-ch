@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import BookingCTA from '@/components/sections/BookingCTA'
 
 const validTiers = ['signature', 'premium', 'atelier'] as const
@@ -31,6 +31,7 @@ export default async function TierPage({
 }) {
   if (!validTiers.includes(tier as Tier)) notFound()
 
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'services' })
   const prefix = `/${locale}`
   const currentTier = tier as Tier

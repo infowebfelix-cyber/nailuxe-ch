@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { setRequestLocale } from 'next-intl/server'
 import BookingCTA from '@/components/sections/BookingCTA'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -45,6 +46,7 @@ export default async function ArtistsPage({
 }: {
   params: { locale: string }
 }) {
+  setRequestLocale(locale)
   const prefix = `/${locale}`
 
   return (

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { GIFT_AMOUNTS } from '@/lib/constants'
 import { formatPrice } from '@/lib/utils'
 
@@ -15,6 +15,7 @@ export default async function GiftPage({
 }: {
   params: { locale: string }
 }) {
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'gift' })
 
   return (

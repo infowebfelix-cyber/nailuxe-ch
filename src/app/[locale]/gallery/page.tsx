@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import BookingCTA from '@/components/sections/BookingCTA'
 
 const galleryItems = Array.from({ length: 12 }, (_, i) => ({
@@ -25,6 +25,7 @@ export default async function GalleryPage({
 }: {
   params: { locale: string }
 }) {
+  setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'gallery' })
   const prefix = `/${locale}`
 

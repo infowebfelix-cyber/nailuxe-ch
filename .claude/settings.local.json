@@ -27,7 +27,10 @@
       "Bash(sed -n '43,50p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/artists/page.tsx\")",
       "Bash(sed -n '40,47p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/journal/page.tsx\")",
       "Bash(sed -n '36,44p' \"/Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/studio/page.tsx\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(find /Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale] -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\))",
+      "Bash(grep -n \"use client\" src/components/layout/Header.tsx src/components/sections/HeroSection.tsx src/components/sections/ServicesPreview.tsx src/components/sections/BookingCTA.tsx src/components/layout/Footer.tsx src/app/[locale]/layout.tsx src/app/[locale]/page.tsx)"
     ]
   }
 }

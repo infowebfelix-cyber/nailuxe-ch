@@ -38,9 +38,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        heading: ['var(--font-playfair)', 'Georgia', 'serif'],
-        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        // ONE typeface across the entire site: Neue Haas Grotesk
+        sans:    ["'Neue Haas Grotesk'", "'HelveticaNeue-Light'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        display: ["'Neue Haas Grotesk'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        heading: ["'Neue Haas Grotesk'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        body:    ["'Neue Haas Grotesk'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['clamp(3rem, 7vw, 6rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],

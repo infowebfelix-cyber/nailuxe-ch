@@ -4,8 +4,11 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { notFound } from 'next/navigation'
 import { locales, type Locale } from '@/i18n/config'
 import Header from '@/components/layout/Header'
+import BottomNav from '@/components/layout/BottomNav'
 import Footer from '@/components/layout/Footer'
 import AnalyticsProvider from '@/components/providers/AnalyticsProvider'
+import TawkTo from '@/components/providers/TawkTo'
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema'
 
 interface LocaleLayoutProps {
   children: React.ReactNode
@@ -27,11 +30,12 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: locale === 'de' ? '/' : `/${locale}`,
+      canonical: locale === 'de' ? 'https://nailuxe.ch/de' : `https://nailuxe.ch/${locale}`,
       languages: {
-        de: '/',
-        fr: '/fr',
-        en: '/en',
+        'de': 'https://nailuxe.ch/de',
+        'fr': 'https://nailuxe.ch/fr',
+        'en': 'https://nailuxe.ch/en',
+        'x-default': 'https://nailuxe.ch/de',
       },
     },
   }
@@ -50,10 +54,15 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      {locale === 'de' && <LocalBusinessSchema />}
       <AnalyticsProvider>
         <Header />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="pb-24">
+          {children}
+        </main>
         <Footer />
+        <BottomNav />
+        <TawkTo />
       </AnalyticsProvider>
     </NextIntlClientProvider>
   )

@@ -6,7 +6,7 @@ import { STUDIO } from '@/lib/constants'
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Studio — Nailuxe',
-    description: 'Das Nailuxe Studio in Zürich. Entworfen für Ihr Wohlbefinden. Swiss precision, European elegance.',
+    description: 'Das Nailuxe Studio in Gränichen AG. Entworfen für Ihr Wohlbefinden. Premium-Nagelpflege auf höchstem Niveau.',
   }
 }
 
@@ -42,7 +42,7 @@ export default async function StudioPage({ params: { locale } }: { params: { loc
         <div className="container-luxury text-center pb-20 md:pb-28">
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="w-8 h-px bg-gold/40" />
-            <span className="label-luxury text-gold/60">Zürich</span>
+            <span className="label-luxury text-gold/60">Gränichen AG</span>
             <div className="w-8 h-px bg-gold/40" />
           </div>
           <h1

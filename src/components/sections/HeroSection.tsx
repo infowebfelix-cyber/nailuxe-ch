@@ -1,115 +1,104 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
-import { cn } from '@/lib/utils'
+import { useLocale } from 'next-intl'
+import { STUDIO } from '@/lib/constants'
 
 export default function HeroSection() {
-  const t = useTranslations('hero')
   const locale = useLocale()
   const prefix = `/${locale}`
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.65
-    }
-  }, [])
 
   return (
     <section
-      className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[100dvh] flex flex-col bg-obsidian overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background — replace src with actual brand video or image */}
-      <div className="absolute inset-0 bg-obsidian">
-        {/* Placeholder gradient until real media is added */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, #1A1A1A 0%, #2C2420 40%, #1A1A1A 100%)',
-          }}
-        />
-        {/* Gold grain texture overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
+      {/* Subtle noise grain */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+          opacity: 0.022,
+        }}
+      />
 
-      {/* Subtle vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-obsidian/30 via-transparent to-obsidian/50 pointer-events-none" />
+      {/* Right accent line */}
+      <div className="absolute right-10 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/[0.04] to-transparent pointer-events-none hidden md:block" />
 
-      {/* Content */}
-      <div className="relative z-10 container-luxury flex flex-col items-center text-center">
-        {/* Eyebrow label */}
-        <div className="flex items-center gap-4 mb-10 animate-fade-in">
-          <div className="w-10 h-px bg-gold/60" />
-          <span className="label-luxury text-ivory/50 tracking-[0.3em]">
-            Zürich
-          </span>
-          <div className="w-10 h-px bg-gold/60" />
+      <div className="relative z-10 flex flex-col justify-between h-full min-h-[100dvh] container-luxury pt-28 pb-12 md:pt-36 md:pb-16">
+
+        {/* Eyebrow */}
+        <div className="flex items-center gap-4">
+          <div className="w-6 h-px bg-gold/50" />
+          <p className="label-luxury text-gold/50 tracking-[0.22em]">
+            NAILUXE — GRÄNICHEN
+          </p>
         </div>
 
-        {/* Main tagline */}
-        <h1
-          className="font-display font-light text-ivory text-balance animate-fade-up"
-          style={{
-            fontSize: 'clamp(3rem, 7vw, 6.5rem)',
-            lineHeight: 1.04,
-            letterSpacing: '-0.02em',
-            animationDelay: '0.2s',
-            animationFillMode: 'both',
-          }}
-        >
-          {t('tagline').split('. ').map((part, i, arr) => (
-            <span key={i}>
-              {part}{i < arr.length - 1 ? '.' : ''}
-              {i < arr.length - 1 && <br />}
+        {/* Main headline */}
+        <div className="flex-1 flex flex-col justify-center">
+          <h1
+            className="font-sans font-light text-ivory"
+            style={{
+              fontSize: 'clamp(4rem, 12vw, 11rem)',
+              lineHeight: 0.93,
+              letterSpacing: '-0.035em',
+            }}
+          >
+            <span className="block">Präzision.</span>
+            <span className="block text-ivory/18" style={{ color: 'rgba(245,240,232,0.18)' }}>Nägel.</span>
+          </h1>
+
+          <p
+            className="font-sans font-light text-ivory/40 mt-8 md:mt-10 max-w-[340px]"
+            style={{ fontSize: 'clamp(0.875rem, 1.3vw, 1rem)', lineHeight: 1.7, letterSpacing: '0.005em' }}
+          >
+            Premium-Nagelpflege in Gränichen —<br />
+            gestaltet für die Frau, die keine Kompromisse kennt.
+          </p>
+
+          <div className="mt-10 md:mt-12 flex items-center gap-10">
+            <Link
+              href={`${prefix}/book`}
+              className="inline-flex items-center gap-4 group"
+              aria-label="Termin buchen"
+            >
+              <span
+                className="h-px bg-gold/60 group-hover:bg-gold transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:w-20"
+                style={{ width: '40px', display: 'block' }}
+              />
+              <span className="label-luxury text-ivory/45 group-hover:text-ivory transition-colors duration-300 tracking-[0.2em]">
+                TERMIN BUCHEN
+              </span>
+            </Link>
+            <a
+              href={`https://wa.me/${STUDIO.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 group"
+              aria-label="WhatsApp"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-gold/40 group-hover:text-gold transition-colors duration-300">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span className="label-luxury text-ivory/35 group-hover:text-ivory/70 transition-colors duration-300 tracking-[0.16em]">
+                WHATSAPP
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="flex items-end justify-between">
+          <div />
+          <div className="flex flex-col items-end gap-2 opacity-25">
+            <span
+              className="font-sans font-light text-ivory"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', letterSpacing: '-0.02em', lineHeight: 1 }}
+            >
+              01
             </span>
-          ))}
-        </h1>
-
-        {/* Gold divider */}
-        <div
-          className="w-12 h-px bg-gold my-8 animate-fade-in"
-          style={{ animationDelay: '0.5s', animationFillMode: 'both' }}
-        />
-
-        {/* Subtitle */}
-        <p
-          className="font-display font-light italic text-ivory/60 animate-fade-in"
-          style={{
-            fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-            animationDelay: '0.6s',
-            animationFillMode: 'both',
-          }}
-        >
-          {t('subtitle')}
-        </p>
-
-        {/* CTA */}
-        <div
-          className="mt-12 animate-fade-up"
-          style={{ animationDelay: '0.85s', animationFillMode: 'both' }}
-        >
-          <Link href={`${prefix}/book`} className="btn-outline-ivory">
-            {t('cta')}
-          </Link>
+            <div className="w-px h-8 bg-gradient-to-b from-ivory/30 to-transparent" />
+          </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-fade-in-slow z-10"
-        style={{ animationDelay: '1.5s', animationFillMode: 'both' }}
-      >
-        <span className="label-luxury text-ivory/30 tracking-[0.25em]">
-          {t('scroll')}
-        </span>
-        <div className="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent animate-pulse" />
       </div>
     </section>
   )

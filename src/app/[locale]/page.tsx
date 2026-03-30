@@ -2,10 +2,6 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import HeroSection from '@/components/sections/HeroSection'
 import ServicesPreview from '@/components/sections/ServicesPreview'
-import PhilosophySection from '@/components/sections/PhilosophySection'
-import GalleryTeaser from '@/components/sections/GalleryTeaser'
-import TestimonialsSection from '@/components/sections/TestimonialsSection'
-import StudioTeaser from '@/components/sections/StudioTeaser'
 import BookingCTA from '@/components/sections/BookingCTA'
 
 export async function generateMetadata({
@@ -23,10 +19,6 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <HeroSection />
       <ServicesPreview />
-      <PhilosophySection />
-      <GalleryTeaser />
-      <TestimonialsSection />
-      <StudioTeaser />
       <BookingCTA />
     </>
   )

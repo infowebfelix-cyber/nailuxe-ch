@@ -1,12 +1,14 @@
 export const STUDIO = {
   name: 'Nailuxe',
-  tagline: 'Precision. Elegance. Care.',
-  email: 'hello@nailuxe.ch',
-  phone: '+41 44 000 00 00',
+  tagline: 'Präzision. Eleganz. Pflege.',
+  email: 'info@nailuxe.ch',
+  phone: '+41 76 628 71 71',
+  whatsapp: '41766287171',
   address: {
-    street: 'Bahnhofstrasse',
-    city: 'Zürich',
-    zip: '8001',
+    street: 'Lindenplatz 7',
+    city: 'Gränichen',
+    zip: '5722',
+    canton: 'AG',
     country: 'Schweiz',
     countryCode: 'CH',
   },
@@ -20,8 +22,8 @@ export const STUDIO = {
     tiktok: 'https://tiktok.com/@nailuxe.ch',
   },
   coordinates: {
-    lat: 47.3769,
-    lng: 8.5417,
+    lat: 47.3609,
+    lng: 8.1078,
   },
 } as const
 

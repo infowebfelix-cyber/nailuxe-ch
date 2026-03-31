@@ -129,7 +129,7 @@ export default function BottomNav() {
   const [visible,   setVisible]   = useState(false)
 
   const wrapRef = useRef<HTMLDivElement>(null)
-  const R = 88  // arc radius — keeps items from going off-screen
+  const R = 130  // arc radius — 130px gives ~56px gap between 46px items (no overlap)
 
   // ── Entry fade-in after hydration ──
   useEffect(() => {

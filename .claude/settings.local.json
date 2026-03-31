@@ -30,7 +30,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(find /Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale] -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\))",
-      "Bash(grep -n \"use client\" src/components/layout/Header.tsx src/components/sections/HeroSection.tsx src/components/sections/ServicesPreview.tsx src/components/sections/BookingCTA.tsx src/components/layout/Footer.tsx src/app/[locale]/layout.tsx src/app/[locale]/page.tsx)"
+      "Bash(grep -n \"use client\" src/components/layout/Header.tsx src/components/sections/HeroSection.tsx src/components/sections/ServicesPreview.tsx src/components/sections/BookingCTA.tsx src/components/layout/Footer.tsx src/app/[locale]/layout.tsx src/app/[locale]/page.tsx)",
+      "Bash(ls -la /Users/abdulsatarsaedy/NailuXe.ch/src/app/[locale]/)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

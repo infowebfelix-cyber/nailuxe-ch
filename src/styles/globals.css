@@ -4,10 +4,13 @@
 
 /* ─── Custom properties ─────────────────────────────────────── */
 :root {
-  --obsidian: #1A1A1A;
-  --ivory: #F5F0E8;
-  --gold: #C9A96E;
-  --stone: #8C8C8C;
+  --obsidian: #0B0C10;    /* Null Black — site background */
+  --ivory:    #F7F9FB;    /* Cool-white — body text on dark */
+  --ivory-warm: #F5F0E8;  /* Warm cream — design accents */
+  --ruby:     #E0115F;    /* Brand ruby — primary CTA */
+  --ruby-deep: #A00D44;
+  --gold:     #C9A96E;
+  --stone:    #A8A8A8;
 }
 
 /* ─── Base reset ─────────────────────────────────────────────── */
@@ -35,26 +38,26 @@
   }
 
   ::selection {
-    background-color: #C9A96E33;
-    color: #F5F0E8;
+    background-color: rgba(224,17,95,0.22);
+    color: #F7F9FB;
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
   ::-webkit-scrollbar-track {
-    background: #1A1A1A;
+    background: #0B0C10;
   }
   ::-webkit-scrollbar-thumb {
-    background: #C9A96E40;
+    background: rgba(224,17,95,0.35);
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #C9A96E;
+    background: #E0115F;
   }
 
   :focus-visible {
-    outline: 1px solid #C9A96E;
+    outline: 1px solid #E0115F;
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -161,6 +164,22 @@
     @apply text-sm font-medium;
     @apply transition-colors duration-200;
     @apply hover:text-ivory;
+  }
+
+  /* Ruby CTA button — Booking / primary action */
+  .btn-ruby {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply px-8 py-3.5 text-white font-medium text-sm;
+    background-color: #E0115F;
+    transition: background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  }
+  .btn-ruby:hover {
+    background-color: #ffffff;
+    color: #E0115F;
+    box-shadow: 0 0 0 1.5px #E0115F;
+  }
+  .btn-ruby:active {
+    transform: scale(0.985);
   }
 }
 

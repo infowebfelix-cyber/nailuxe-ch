@@ -10,30 +10,30 @@ export default function HeroSection() {
         <div
           className="absolute rounded-full"
           style={{
-            width: '65vw', height: '65vw',
-            top: '-15%', left: '-15%',
-            background: 'radial-gradient(circle, rgba(162,28,68,0.45) 0%, rgba(120,20,50,0.18) 50%, transparent 75%)',
-            filter: 'blur(60px)',
+            width: '60vw', height: '60vw',
+            top: '-18%', left: '-18%',
+            background: 'radial-gradient(circle, rgba(224,17,95,0.38) 0%, rgba(160,13,68,0.14) 50%, transparent 75%)',
+            filter: 'blur(72px)',
           }}
         />
         {/* Gold glow — bottom-right */}
         <div
           className="absolute rounded-full"
           style={{
-            width: '55vw', height: '55vw',
-            bottom: '-10%', right: '-10%',
-            background: 'radial-gradient(circle, rgba(201,169,110,0.3) 0%, rgba(180,130,60,0.12) 50%, transparent 75%)',
-            filter: 'blur(70px)',
+            width: '50vw', height: '50vw',
+            bottom: '-8%', right: '-12%',
+            background: 'radial-gradient(circle, rgba(201,169,110,0.22) 0%, rgba(148,107,45,0.08) 50%, transparent 75%)',
+            filter: 'blur(80px)',
           }}
         />
-        {/* Deep rose accent — center */}
+        {/* Deep ruby accent — center-right */}
         <div
           className="absolute rounded-full"
           style={{
-            width: '40vw', height: '40vw',
-            top: '30%', left: '40%',
-            background: 'radial-gradient(circle, rgba(140,40,80,0.2) 0%, transparent 70%)',
-            filter: 'blur(80px)',
+            width: '35vw', height: '35vw',
+            top: '28%', left: '42%',
+            background: 'radial-gradient(circle, rgba(160,13,68,0.16) 0%, transparent 70%)',
+            filter: 'blur(90px)',
           }}
         />
       </div>
@@ -42,16 +42,18 @@ export default function HeroSection() {
       <div
         aria-hidden
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+        style={{ contain: 'strict' }}
       >
         <span
           className="font-sans font-medium text-ivory"
           style={{
-            fontSize: 'clamp(12rem, 30vw, 36rem)',
-            letterSpacing: '-0.05em',
+            /* 24vw ≈ fills viewport width at all breakpoints — no hard min floor */
+            fontSize: 'clamp(4rem, 24vw, 32rem)',
+            letterSpacing: '-0.04em',
             lineHeight: 1,
-            opacity: 0.025,
+            opacity: 0.022,
             whiteSpace: 'nowrap',
-            transform: 'translateX(8%)',
+            userSelect: 'none',
           }}
         >
           NAILUXE

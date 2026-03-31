@@ -11,14 +11,22 @@ const config: Config = {
       colors: {
         // Nailuxe brand palette
         obsidian: {
-          DEFAULT: '#1A1A1A',
-          light: '#2C2C2C',
-          dark: '#0D0D0D',
+          DEFAULT: '#0B0C10',   // Null Black — main background
+          light: '#1C1F26',
+          mid:   '#111318',
+          dark:  '#070809',
         },
         ivory: {
-          DEFAULT: '#F5F0E8',
-          light: '#FAF7F2',
-          dark: '#EDE6D8',
+          DEFAULT: '#F7F9FB',   // Clean cool-white — body text on dark
+          warm:  '#F5F0E8',     // Warm cream — design elements
+          light: '#FAFBFC',
+          dark:  '#E8ECF0',
+        },
+        ruby: {
+          DEFAULT: '#E0115F',   // Brand ruby — primary CTA & accents
+          deep:    '#A00D44',
+          darker:  '#6A0830',
+          glow:    'rgba(224,17,95,0.28)',
         },
         gold: {
           DEFAULT: '#C9A96E',
@@ -27,14 +35,14 @@ const config: Config = {
           muted: '#C9A96E33',
         },
         rose: {
-          nail: '#C4A09A',
-          light: '#D4B8B3',
-          dark: '#A8847D',
+          nail: '#D68A9C',
+          light: '#E0A8B8',
+          dark:  '#B06070',
         },
         stone: {
-          DEFAULT: '#8C8C8C',
-          light: '#B0B0B0',
-          dark: '#5C5C5C',
+          DEFAULT: '#A8A8A8',
+          light: '#C8C8C8',
+          dark:  '#6A6A6A',
         },
       },
       fontFamily: {
